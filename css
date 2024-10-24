@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/008/407/900/non_2x/background-with-white-daisies-simple-pattern-seamless-texture-background-for-scrapbooking-or-textiles-vector.jpg)
+
+}
+
+/*agregar sombra al fondo*/
+body:hover {
+    border-radius: 4%;
+    background-color: rgba(236, 235, 235, 0.658); 
+    box-shadow: inset 0 0 30px rgba(194, 193, 193, 0.966); /* Sombra interna */
+    z-index: 0; /* Encima del fondo, pero debajo de la calculadora */
+}
+
+.calculadora {
+    position:relative;
+    background-color:black;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(255, 255, 255, 0.171);
+    padding: 20px;
+}
+
+#resultado {
+    width: 95;
+    height: 50px;
+    text-align: right;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color:white;
+}
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6d6d6d;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d18903;
+}
+
