@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title> 
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="calculadora">
+        <input type="text" id="resultado" disabled>
+        <div class="botones">
+            <button onclick="limpiar()">C</button>
+            <button onclick="agregarCaracter('/')">/</button>
+            <button onclick="agregarCaracter('*')">*</button>
+            <button onclick="agregarCaracter('-')">-</button>
+            <button onclick="captura('7')">7</button>
+            <button onclick="captura('8')">8</button>
+            <button onclick="captura('9')">9</button>
+            <button onclick="agregarCaracter('+')">+</button>
+            <button onclick="captura('4')">4</button>
+            <button onclick="captura('5')">5</button>
+            <button onclick="captura('6')">6</button>
+            <button onclick="calcular()">=</button>
+            <button onclick="captura('1')">1</button>
+            <button onclick="captura('2')">2</button>
+            <button onclick="captura('3')">3</button>
+            <button onclick="captura('0')">0</button>
+        </div>
+    </div>
+    <script>
+    var cadnumero = ''; //para almacenar los numeros y la operación
+    function captura(numero){      //CALCULADORA DE VANESSA GULFO Y ALEJANDRA AGAMEZ
+        cadnumero += numero
+        document.getElementById("resultado").value =  cadnumero
+    }
+
+    function agregarCaracter(operador){
+        cadnumero += operador
+        document.getElementById("resultado").value = cadnumero
+    }
+
+    function limpiar() { //para borrar la pantalla
+            cadnumero = '';
+            document.getElementById("resultado").value = '';
+        }
+
+         // para calcular la operación
+        function calcular() {
+            try {
+                // Evaluar la cadena de números y operadores
+                var resultado = eval(cadnumero);
+                document.getElementById("resultado").value = resultado;
+                cadnumero = resultado.toString(); // Guardar el resultado para continuar operaciones
+            } catch (error) {
+                document.getElementById("resultado").value = "Error";
+
+            }
+        }
+
+    </script>
+</body>
+</html>
